@@ -20,9 +20,17 @@ func (man *Man) ChangeName(name string) {
 	man.Name = name
 }
 
+func ChangeNameByValue(man Man, name string) {
+	man.Name = name
+}
+
 func main() {
 	myMan := Man{"lee", 32, "student"}
 	myMan.info()
+	//call by reference
 	myMan.ChangeName("park")
+	myMan.info()
+	//call by value
+	ChangeNameByValue(myMan, "KILL")
 	myMan.info()
 }
